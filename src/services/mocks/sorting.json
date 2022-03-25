@@ -1,0 +1,56 @@
+[
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "По умолчанию",
+        "isAscending": true,
+        "name": "default"
+    },
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "Самые популярные",
+        "isAscending": false,
+        "name": "sales30"
+    },
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "Самые загружаемые",
+        "isAscending": false,
+        "name": "downloads30"
+    },
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "Название (А - Я)",
+        "isAscending": false,
+        "name": "productNameDescending"
+    },
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "Название (Я - А)",
+        "isAscending": true,
+        "name": "productNameAscending"
+    },
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "Дата выхода (от старых к новым)",
+        "isAscending": true,
+        "name": "productReleaseDateAscending"
+    },
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "Дата выхода (от новых к старым)",
+        "isAscending": false,
+        "name": "productReleaseDateDescending"
+    },
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "Цена (по возрастанию)",
+        "isAscending": true,
+        "name": "webBasePriceAscending"
+    },
+    {
+        "__typename": "CategorySortingOption",
+        "displayName": "Цена (по убыванию)",
+        "isAscending": false,
+        "name": "webBasePriceDescending"
+    }
+]

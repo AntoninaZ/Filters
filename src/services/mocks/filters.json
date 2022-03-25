@@ -1,0 +1,50 @@
+[
+    {
+        "__typename": "CategoryFacetValue",
+        "count": 90,
+        "displayName": "Полная версия игры",
+        "key": "FULL_GAME"
+    },
+    {
+        "__typename": "CategoryFacetValue",
+        "count": 51,
+        "displayName": "Игровой комплект",
+        "key": "GAME_BUNDLE"
+    },
+    {
+        "__typename": "CategoryFacetValue",
+        "count": 30,
+        "displayName": "Премиум-издание",
+        "key": "PREMIUM_EDITION"
+    },
+    {
+        "__typename": "CategoryFacetValue",
+        "count": 8,
+        "displayName": "Дополнение",
+        "key": "OTHER"
+    },
+    {
+        "__typename": "CategoryFacetValue",
+        "count": 7,
+        "displayName": "Пакет дополнений",
+        "key": "ADD-ON_PACK"
+    },
+    {
+        "__typename": "CategoryFacetValue",
+        "count": 2,
+        "displayName": "Уровень",
+        "key": "LEVEL"
+    },
+    {
+        "__typename": "CategoryFacetValue",
+        "count": 2,
+        "displayName": "Виртуальная валюта",
+        "key": "VIRTUAL_CURRENCY"
+    },
+    {
+        "__typename": "CategoryFacetValue",
+        "count": 1,
+        "displayName": "Автомобиль",
+        "key": "VEHICLE"
+    }
+]
