@@ -1,11 +1,11 @@
-import { Layout, PageHeader } from "antd";
+import { Layout, PageHeader } from 'antd';
 
-import TagList from "../../components/TagList/TagList";
-import GameList from "../../components/GameList/GameList";
+import TagList from '../../components/TagList/TagList';
+import GameList from '../../components/GameList/GameList';
 
 const Page = () => (
   <>
-    <PageHeader>Бестселлеры</PageHeader>
+    <PageHeader>Bestsellers</PageHeader>
     <TagList />
     <Layout>
       <GameList />
