@@ -1,20 +1,28 @@
 import { List, Checkbox } from 'antd';
+import { useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import facetOptions from '../../services/mocks/filters.json';
-import { setActiveFiters } from '../../redux/filtersListSlice';
+import { fetchFilters, setActiveFiters } from '../../redux/filtersListSlice';
 
 export default function FiltersList() {
-  const activeFilters = useSelector((state) => state.filterType.activeFilters);
+  const filtersList = useSelector((state) => state.filters.filtersList);
+  const activeFilters = useSelector((state) => state.filters.activeFilters);
   const dispatch = useDispatch();
 
-  const onChange = (e) => {
-    dispatch(setActiveFiters(e.target.id));
-  };
+  const onChange = useCallback(
+    (e) => {
+      dispatch(setActiveFiters(e.target.id));
+    },
+    [dispatch]
+  );
+
+  useEffect(() => {
+    dispatch(fetchFilters());
+  }, [dispatch]);
 
   return (
     <List
-      dataSource={facetOptions}
+      dataSource={filtersList}
       renderItem={(item) => (
         <List.Item>
           <Checkbox

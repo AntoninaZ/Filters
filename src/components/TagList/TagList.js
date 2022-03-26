@@ -9,7 +9,7 @@ import {
 } from '../../redux/filtersListSlice';
 
 export default function TagList() {
-  const activeFilters = useSelector((state) => state.filterType.activeFilters);
+  const activeFilters = useSelector((state) => state.filters.activeFilters);
   const dispatch = useDispatch();
 
   function hanlerClose(key) {

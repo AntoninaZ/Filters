@@ -1,7 +1,11 @@
 import { Radio } from 'antd';
+import { useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setSortingOption } from '../../redux/sortingOptionSlice';
+import {
+  fetchSortingOption,
+  setActiveSortingOption,
+} from '../../redux/sortingOptionSlice';
 
 export default function SortingList() {
   const sortingList = useSelector((state) => state.sorting.sortingOptionsList);
@@ -10,14 +14,21 @@ export default function SortingList() {
   );
   const dispatch = useDispatch();
 
-  const onChange = (e) => {
-    dispatch(setSortingOption(e.target.value));
-  };
+  const onChange = useCallback(
+    (e) => {
+      dispatch(setActiveSortingOption(e.target.value));
+    },
+    [dispatch]
+  );
+
+  useEffect(() => {
+    dispatch(fetchSortingOption());
+  }, [dispatch]);
 
   return (
     <Radio.Group onChange={onChange} value={activeSortingOption}>
-      {sortingList.map((item, index) => (
-        <Radio key={item.name} value={index}>
+      {sortingList.map((item) => (
+        <Radio key={item.name} value={item.name}>
           {item.displayName}
         </Radio>
       ))}

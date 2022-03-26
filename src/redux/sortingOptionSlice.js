@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import sortingOptions from '../services/mocks/sorting.json';
+import { getSortingOptions } from '../services/api/games.api';
 
 const initialState = {
-  activeSortingOption: 0,
-  sortingOptionsList: sortingOptions,
+  sortingOptionsList: [],
+  activeSortingOption: 'default',
 };
 
 export const sortingOptionSlice = createSlice({
@@ -12,11 +12,20 @@ export const sortingOptionSlice = createSlice({
   initialState,
   reducers: {
     setSortingOption: (state, action) => {
+      state.sortingOptionsList = action.payload;
+    },
+    setActiveSortingOption: (state, action) => {
       state.activeSortingOption = action.payload;
     },
   },
 });
 
-export const { setSortingOption } = sortingOptionSlice.actions;
+export const fetchSortingOption = () => async (dispatch) => {
+  const sortingOptionsList = await Promise.resolve(getSortingOptions());
+  dispatch(setSortingOption(sortingOptionsList));
+};
+
+export const { setActiveSortingOption, setSortingOption } =
+  sortingOptionSlice.actions;
 
 export default sortingOptionSlice.reducer;

@@ -7,15 +7,9 @@
     },
     {
         "__typename": "CategorySortingOption",
-        "displayName": "Самые популярные",
-        "isAscending": false,
-        "name": "sales30"
-    },
-    {
-        "__typename": "CategorySortingOption",
         "displayName": "Самые загружаемые",
         "isAscending": false,
-        "name": "downloads30"
+        "name": "downloads"
     },
     {
         "__typename": "CategorySortingOption",
