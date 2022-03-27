@@ -1,39 +1,20 @@
 import { List, Checkbox } from 'antd';
-import { useCallback, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 
-import { fetchFilters, setActiveFiters } from '../../redux/filtersListSlice';
-
-export default function FiltersList() {
-  const filtersList = useSelector((state) => state.filters.filtersList);
-  const activeFilters = useSelector((state) => state.filters.activeFilters);
-  const dispatch = useDispatch();
-
-  const onChange = useCallback(
-    (e) => {
-      dispatch(setActiveFiters(e.target.id));
-    },
-    [dispatch]
-  );
-
-  useEffect(() => {
-    dispatch(fetchFilters());
-  }, [dispatch]);
-
+export default function FiltersList({ items, activeItem, onChange }) {
   return (
     <List
-      dataSource={filtersList}
+      dataSource={items}
       renderItem={(item) => (
         <List.Item>
           <Checkbox
             id={item.key}
-            checked={activeFilters[item.key]}
-            onChange={onChange}
+            checked={activeItem[item.key]}
+            onChange={(e) => onChange(e.target.id)}
           >
             {item.displayName}
           </Checkbox>
         </List.Item>
       )}
-    ></List>
+    />
   );
 }

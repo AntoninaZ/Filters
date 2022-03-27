@@ -1,3 +1,30 @@
 {
-  "extends": ["react-app"]
+  "extends": ["react-app", "prettier"],
+  "rules": {
+    "no-var": "warn",
+    "object-shorthand": ["warn", "properties"],
+
+    "accessor-pairs": [
+      "error",
+      { "setWithoutGet": true, "enforceForClassMembers": true }
+    ],
+    "array-callback-return": [
+      "error",
+      {
+        "allowImplicit": false,
+        "checkForEach": false
+      }
+    ],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "block-spacing": ["error", "always"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "camelcase": [
+      "error",
+      {
+        "allow": ["^UNSAFE_"],
+        "properties": "never",
+        "ignoreGlobals": true
+      }
+    ]
+  }
 }
