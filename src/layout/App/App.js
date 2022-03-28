@@ -1,13 +1,13 @@
-import { Layout as AntLayout } from "antd";
+import { Layout as AntLayout } from 'antd';
 
-import "antd/dist/antd.css";
+import 'antd/dist/antd.css';
 
-import PsPage from "../Page/Page";
-import PsFilters from "../../components/Filters/Filters";
+import PsPage from '../Page/Page';
+import PsSideBar from '../../components/PsSideBar/PsSideBar';
 
-import "./app.css";
+import './app.css';
 
-const { Header: AntHeader, Content: AntContent, Footer: AntFooter, Sider: AntSider } = AntLayout;
+const { Header: AntHeader, Content: AntContent, Footer: AntFooter } = AntLayout;
 
 function App() {
   return (
@@ -18,9 +18,7 @@ function App() {
           <AntContent>
             <PsPage />
           </AntContent>
-          <AntSider className="site-layout-background" width={200}>
-            <PsFilters />
-          </AntSider>
+          <PsSideBar />
         </AntLayout>
         <AntFooter />
       </AntLayout>

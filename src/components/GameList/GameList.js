@@ -20,7 +20,8 @@ export default function GameList() {
 
   return (
     <List
-      grid={{ gutter: 16, column: 4 }}
+      grid={{ gutter: 16, xs: 1, sm: 2, md: 2, lg: 4, xl: 4, xxl: 6 }}
+      xs={{ column: 1 }}
       dataSource={games}
       renderItem={(item) => (
         <List.Item>
