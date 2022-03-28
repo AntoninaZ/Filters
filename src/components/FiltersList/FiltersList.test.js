@@ -26,7 +26,7 @@ describe('<FiltersList />', () => {
       addListener: jest.fn(), // deprecated
       removeListener: jest.fn(), // deprecated
       addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
+      removeEventListene: jest.fn(),
       dispatchEvent: jest.fn(),
     });
   });

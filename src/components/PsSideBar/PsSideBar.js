@@ -19,8 +19,8 @@ export default function PsSideBar() {
   const activeSortingOption = useSelector(
     (state) => state.sorting.activeSortingOption
   );
-  const filtersList = useSelector((state) => state.filters.filtersList);
-  const activeFilters = useSelector((state) => state.filters.activeFilters);
+
+  const { filtersList, activeFilters } = useSelector((state) => state.filters);
 
   const dispatch = useDispatch();
 
@@ -39,11 +39,8 @@ export default function PsSideBar() {
   );
 
   useEffect(() => {
-    dispatch(fetchFilters());
-  }, [dispatch]);
-
-  useEffect(() => {
     dispatch(fetchSortingOption());
+    dispatch(fetchFilters());
   }, [dispatch]);
 
   return (
