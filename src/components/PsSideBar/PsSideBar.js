@@ -15,11 +15,9 @@ const { Panel } = Collapse;
 const { Sider: AntSider } = Layout;
 
 export default function PsSideBar() {
-  const sortingList = useSelector((state) => state.sorting.sortingOptionsList);
-  const activeSortingOption = useSelector(
-    (state) => state.sorting.activeSortingOption
+  const { sortingList, activeSortingOption } = useSelector(
+    (state) => state.sorting
   );
-
   const { filtersList, activeFilters } = useSelector((state) => state.filters);
 
   const dispatch = useDispatch();
